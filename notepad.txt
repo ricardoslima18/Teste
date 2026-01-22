@@ -1,0 +1,14 @@
+let nome = prompt('Digite seu nome.');
+if (nome && nome.trim() !== ""){
+    document.writeln(`Ola, ${nome}! Bem vindo ao meu site.`);
+}
+    else {
+        document.writeln(`Ola, Visi! Bem vindo ao meu site.`);
+    }
+
+        if (idade<18) {
+    document.writeln("Voce é maior de idade. Seja bem vindo(a).");
+    } else {
+            document.writeln("Voce é menor de idade. Nao deveria estar nesse site.");
+    }
+}

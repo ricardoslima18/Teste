@@ -1,0 +1,19 @@
+:root {
+ --azul-botao: #167BF7;    
+ --fonte-principal : 'Montserrat';
+}
+    body{
+        font-family: var(--fonte-principal);
+        font-size: 16px;
+        color: aquamarine;
+    }
+#calcularBtn{
+        font-size: 16px;
+        color: var(--azul-botao);
+        font-style: var(--fonte-principal);
+        border-style: solid;
+        border-radius: 10px;
+}
+.button__calcularBtn {
+    font-style: var(--azul-botao);
+}
