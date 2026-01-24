@@ -1,5 +1,5 @@
-let nomeUsuario = "Ricardo"; //var,let e const
-let idade = "31";
-console.log(`Olá meu nome é  ${nomeUsuario}, tenho ${idade} anos.`);
-const pi = 3.14;
-console.log("Pi = "+pi); 
+let i = 1; 
+while (i <= 20){ 
+    i += 2 
+    console.log(i);
+}
