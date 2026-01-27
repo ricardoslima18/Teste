@@ -1,9 +1,9 @@
 let senha = "pao";
-let senhadigitada = "";
+let senhaDigitada = "";
 
-while (senhadigitada !== senha);{
-    senhadigitada = prompt("Digite a senha");
-    if (senhadigitada !== senha) {
+while (senhaDigitada !== senha);{
+    senhaDigitada = prompt("Digite a senha");
+    if (senhaDigitada !== senha){
         alert("Senha incorreta. Try again loser")
     }
 }
