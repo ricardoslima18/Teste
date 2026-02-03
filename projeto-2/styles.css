@@ -7,9 +7,17 @@
 body {
     font-family: Arial, sans-serif;
     margin: 1.5rem;
-    background-color: #ffffffb9;
+    background-image: url(lutagif.gif);
 }
-
+h1 {
+    font-family: 'Dbz', sans-serif;
+    background: linear-gradient(45deg, #d8f40b, #ff1100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 60px;
+    font-weight: 700;
+}
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -32,9 +40,7 @@ nav a {
 nav a:hover {
     opacity: 1;
 }
-header h1 {
-    color: var(--primary-color);
-}
+
 main {
         min-height: 80vh;
         padding: 4rem 2rem;
@@ -47,17 +53,14 @@ section {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+img {
+    max-width: 150px;
+    border-radius: 20%;
+    margin-bottom: 1rem;
+}
 section h2 {
     color: var(--secondary-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-footer p {
-    text-align: center;
-    font-size: 0.9em;
-    color: #0407a3;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 2rem;
-    margin-top: 2rem;
 }
 a {
     color: var(--primary-color);
@@ -73,20 +76,212 @@ p {
     font-family: Arial, Helvetica, sans-serif;
     color: #000000f1;
 }
+.habilidades {
+    background-color: #f1f8e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.formacao {
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.experiencia {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    margin-left: 12%;
+    margin-right: auto;
+    width: 80%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: square;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none; 
+}
 
 
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+.slide-container { 
+    display: block; 
+}
+
+.slide-image {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}   
+
+.slide-image img {
+    width: 10px;
+    min-width: 90%;
+    height: 100%;
+    justify-items: baseline;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 15px 1px 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+img#skill {
+  transform: scale(0.5,1);
+width: auto;
+max-width: max-content;
+height: auto;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 1.5em;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
+
+
+@media screen and(max-width: 768px) {
+    .slide-image {
+        display: none;
+        width: 150px;
+        height: auto;
     }
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        }
-        main {
-            padding: 2rem 1rem;
-        }
+    .slide-image:hover + .carousel-controls label{
+    opacity: 0.3;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 1.5em;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+.img#skill {
+  transform: scale(1,2);
+width: auto;
+height: 5px;
+}
 }

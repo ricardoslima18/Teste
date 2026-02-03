@@ -4,36 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculo - Ricardo Souza  </title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    @font-face {
+    font-family: 'Dbz';
+    src: url('fonts/Saiyan-Sans\ Left\ Oblique.ttf') format('woff2'),
+         url('fonts/Saiyan-Sans\ Left\ Oblique.ttf') format('woff'),
+         url('fonts/Saiyan-Sans\ Left\ Oblique.ttf') format('truetype');}
+</style>
 <body>
+        <audio src="DragonBall.mp3" autoplay loop></audio>
+
     <header>
         <h1>Curriculo Ricardo Souza <br>
         <img src="R.jpeg" width="10%" alt="SOU O BABIDI"></h1>
     </header>
-    <h2>Experiência</h2>
-    <ol type="I">
-        <li>Auxiliar de Escritório</li>
-        <li>Gerente Hospitalar -- 2017/2021</li>
-        <li>Atendente de Loja -- 2022</li>
-        <li>Motorista -- 2024/2025</li>
-        <li>Operador Logístico -- 2025-Atualmente</li>
-        </ol>
-        <li><h2>Formação Acadêmica</li></h2>
-        <ol type="I">
-        <li>Ensino Médio Completo</li>
-        <li>Faculdade de Administração</li>
-    </ol>
-    <h3>Soft Skills</h3>
-    <ol type="I">
-        <li>Comunicação</li>
-        <li>Trabalho em equipe</li>
-        <li>Resolução de problemas</li>
-        <li>Adaptabilidade</li>
-    </ol>
-    <h3>Hard Skills</h3>
-    <ol type="I">
-        <li>Pacote Office</li>
-        <li>Inglês Avançado</li>
-
+<div>
+  <div class="carousel">
+    <ul class="slides">
+      <input type="radio" name="radio-buttons" id="img-1" checked />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="experienciadbz.jpg">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-3" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-2" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-2" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="formacaodbz.png">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-1" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-3" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-3" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img id="skill" src="skills.png">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-2" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-1" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <div class="carousel-dots">
+        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+      </div>
+    </ul>
+  </div>
+</div>
     </body>
 </html>
