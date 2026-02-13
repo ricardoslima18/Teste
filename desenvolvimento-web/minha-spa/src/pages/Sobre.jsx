@@ -3,8 +3,8 @@ import styles from '../styles/Sobre.module.css' ;
 export function Sobre(){
     return(
         <div className={styles.container}>
-            <header classname={styles.header}>
-                <h1 classname={styles.title}> Sobre o projeto</h1>
+            <header className={styles.header}>
+                <h1 className={styles.title}> Sobre o projeto</h1>
                 <p className={styles.subtitle}>Conheça as tecnologias aplicadas nessa SPA.</p>
             </header>
 
