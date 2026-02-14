@@ -9,7 +9,7 @@ export function Sobre(){
             </header>
 
         <section className={styles.content}>
-        <p>Este projeto bla bla bla bla<strong>React</strong></p>
+        <p>Este projeto bla bla bla bla <strong> React</strong></p>
         <div className={styles.card}>
             <h3>Capacidades Técnicas:</h3>
             <ul className={styles.list}>
@@ -23,6 +23,5 @@ export function Sobre(){
         <p>Dsenvolvido durante o aprendizado de Front-End</p>
         </footer>
         </div>
-
     );
 }
