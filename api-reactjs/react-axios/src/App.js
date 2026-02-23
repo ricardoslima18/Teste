@@ -7,7 +7,7 @@ export default function App() {
     useEffect (() =>{
       async function loadUser() {
         try{
-          const response = await api.get('/use');
+          const response = await api.get('/users/ricardoslima18');
           setUser(response.data);
       } catch(error){
         console.error('Deu erro babaca', error)
