@@ -29,9 +29,9 @@ export default function App() {
       } finally {
         setLoading(false);
       }
-      loadData();
-    };
-    },[]);
+    }
+    loadData();
+  },[]);
 
     if(loading) {
     return (
@@ -53,7 +53,41 @@ export default function App() {
     return(
    <div className="app-container">
     <div className="profile-card"></div>
+      <header className="profile-header">
+        <img src={user.avatar_url} alt={user.name} className="avatar"></img>
+        <div className="user-info">
+          <h1>{user.name || user.login}</h1>
+          <p>{user.bio} || "Sem bio disponível"</p>
+          <div className="stats">
+            <span><strong>{user.followers}</strong>Seguidores</span>
+            <span><strong>{user.following}</strong>Seguindo</span>
+          </div>
+          <a href={user.html_url} target="_blank" rel="noreferrer" className="github-link">
+            Ver perfil completo.
+          </a>
+        </div>
+      </header>
+      <main className="repos-section">
+        <h2>Repositórios recentes
+          <div className="repos-grid">
+            {repos.map(repo => (
+              <div key={repo.id} className="repo-card">
+              <h3>{repo.name}</h3>
+                <p>{repo.description || "Sem descrição."}</p>
+                <div className="repo-footer">
+                  <span> {repo.stargazers_count}</span>
+                  <span> {repo.forks_count}</span>
+                  <a href="{repo.html_url}" target="_blank" rel="noreferrer">
+                    Acessar
+                  </a>
+                </div>
+               </div>
+              
+            ))}
+          </div>
+        </h2>
 
+      </main>
     </div>
       )}
 
