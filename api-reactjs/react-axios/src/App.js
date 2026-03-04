@@ -3,7 +3,7 @@ import api from "./services/api";
 import './App.css';
 
 export default function App() {
-    const [username, setUsername] = useState('ricardoslima18');
+    const [username] = useState('ricardoslima18');
     const [user, setUser] = useState(null);
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ export default function App() {
       }
     }
     loadData();
-  },[]);
+  },[username]);
 
     if(loading) {
     return (
