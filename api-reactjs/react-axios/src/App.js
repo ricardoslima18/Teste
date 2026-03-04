@@ -68,7 +68,7 @@ export default function App() {
         </div>
       </header>
       <main className="repos-section">
-        <h2>Repositórios recentes
+        <h2>Repositórios recentes</h2>
           <div className="repos-grid">
             {repos.map(repo => (
               <div key={repo.id} className="repo-card">
