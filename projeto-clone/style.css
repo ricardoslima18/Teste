@@ -4,6 +4,11 @@
   --branco: #ffffff;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: var(--roxo-700);
   background-image: url("assets/bg-mobile.svg");
@@ -135,7 +140,7 @@ footer {
 }
 @media (min-width: 375px) {
 img {
-  width: 80%;
+  width: 85%;
   top: 5%;
   left: 5%;
   position: relative;
