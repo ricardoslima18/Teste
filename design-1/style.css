@@ -1,0 +1,20 @@
+:root {
+    --fonte-primaria: "Space Mono", sans-serif;
+    --fonte-tamanho: 18px;
+    --fonte-peso: 700px:
+    --verde-neutro: hsl(172, 67%, 45%);
+    --verde-neutro: hsl(183, 100%, 15%);
+    --cinza: hsl(184,14%,56%);
+    --branco: hsl(0, 100%, 100%);
+
+}
+
+body {
+    background-image: url(design/desktop-design-empty.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-family: var(--fonte-primaria);
+    font-size: var(--fonte-tamanho);
+    color: var(--verde-neutro);
+    font-weight: var(--fonte-peso);
+}
