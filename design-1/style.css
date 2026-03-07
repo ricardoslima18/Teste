@@ -1,20 +1,71 @@
 :root {
     --fonte-primaria: "Space Mono", sans-serif;
     --fonte-tamanho: 18px;
-    --fonte-peso: 700px:
-    --verde-neutro: hsl(172, 67%, 45%);
+    --fonte-peso: 700px;
+    --verde: hsl(172, 67%, 45%);
     --verde-neutro: hsl(183, 100%, 15%);
     --cinza: hsl(184,14%,56%);
+    --cinza-200: hsl(185,41%,84%);
+    --cinza-50: hsl(189,47%,97%);
     --branco: hsl(0, 100%, 100%);
 
 }
 
 body {
-    background-image: url(design/desktop-design-empty.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
+    background-color: var(--cinza-200);
     font-family: var(--fonte-primaria);
     font-size: var(--fonte-tamanho);
     color: var(--verde-neutro);
     font-weight: var(--fonte-peso);
+    height: 100vh;
+}
+
+header {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10% 50%;
+}
+
+.container-teste{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+.container-conta{
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente */
+  align-items: center;     /* Alinha verticalmente */
+  width: 800px;
+  height: 350px;
+  border-radius:  20px;
+  padding: 2rem;
+  background-color: var(--branco);
+}
+.container-conta h1 {
+    color: var(--cinza);
+    font-family: var(--fonte-primaria);
+}
+input {
+background-color: var(--cinza-50);
+border: 2px solid red; 
+border-radius: 4px;
+background-image: url(images/icon-dollar.svg);
+background-repeat: no-repeat;
+}
+
+button {
+    background-color: var(--verde-neutro);
+    color: var(--branco);
+    border-radius: 30px;
+    display: grid;
+}
+button:hover {
+    background-color: var(--verde);
+    color: var(--verde-neutro);
+}
+.btn-custom {
+    background-color: var(--cinza-50);
+    color: var(--cinza-200);
 }
