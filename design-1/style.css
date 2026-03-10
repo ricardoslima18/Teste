@@ -12,7 +12,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Space Mono', monospace; /* Fonte padrão desse desafio */
 }
 
@@ -86,9 +85,11 @@ label {
 .tip-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-    gap: 15px;
+    gap: 10px;
     width: 100%;
+    min-height: 50px;
 }
+
 
 .tip-btn {
     background-color: var(--very-dark-cyan);
@@ -176,4 +177,60 @@ label {
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+/* Media Query para telas de até 800px (Tablets e Celulares) */
+@media (max-width: 800px) {
+    body {
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+        padding-top: 50px;
+    }
+
+    /* O container principal muda de 'row' para 'column' */
+    .main-container {
+        flex-direction: column;
+        width: 100%;           /* Ocupa a largura total */
+        border-bottom-left-radius: 0; /* Estilo comum em mobile: cantos retos embaixo */
+        border-bottom-right-radius: 0;
+        padding: 32px 24px;
+        gap: 32px;
+    }
+
+    /* Ajusta a grade de botões para 2 colunas em vez de 3 */
+    .tip-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Ajusta o tamanho dos resultados para não apertar o texto */
+    .amount {
+        font-size: 32px;
+    }
+
+    .results-side {
+        padding: 37px 24px 24px 24px;
+    }
+
+    .result-row {
+        margin-bottom: 25px;
+    }
+}
+
+/* Ajuste extra para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 375px) {
+    .amount {
+        font-size: 28px;
+    }
+    .tip-grid{
+        gap: 5px;
+        width: 10px;
+    }
+    .tip-btn, .custom-tip {
+    width: 100% !important; /* Força a ocupar a largura da célula do grid */
+    box-sizing: border-box; /* Fundamental: impede que o padding aumente o botão */
+    margin: 0;              /* Garante que não haja margens extras empurrando os vizinhos */
+    padding: 10px 37px;      /* Padding igual para todos */
+}
+.custom-tip:placeholder-shown {
+    
+}
 }
