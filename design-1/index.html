@@ -3,29 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Gorjeta</title>
+    <title>Splitter - Calculadora de Gorjeta</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
-
 <body>
     <header>
-    <img src="images/logo.svg">
-</header>
-<div class="container-teste">
-    <div class="container-conta">
-    <h1>Conta
-    <input type="text"></li>
-    <div class="container-botoes">
-    <button type="button">5%</button>
-    <button type="button">10%</button>
-    <button type="button">15%</button>
-    <button type="button">25%</button>
-    <button type="button">50%</button>
-    <button class="btn-custom" type="submit">Custom</button>
-    </div>
-</div>
-</div>
+        <img src="images/logo.svg" alt="SPLITTER">
+    </header>
 
+    <main class="main-container">
+        
+        <section class="form-side">
+            <div class="input-group">
+                <label for="bill">Conta</label>
+                <div class="input-field">
+                    <img src="images/icon-dollar.svg" alt="" class="icon">
+                    <input type="number" id="bill" placeholder="0" step="0.01">
+                </div>
+            </div>
+
+            <div class="tip-selection">
+                <label>Selecione a Gorjeta %</label>
+                <div class="tip-grid">
+                    <button type="button" class="tip-btn">5%</button>
+                    <button type="button" class="tip-btn">10%</button> 
+                    <button type="button" class="tip-btn">15%</button>
+                    <button type="button" class="tip-btn">25%</button>
+                    <button type="button" class="tip-btn">50%</button>
+                    <input type="number" class="custom-tip" placeholder="Valor Unico">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="label-row">
+                    <label for="people">Número de Pessoas.</label>
+                    <span class="error-msg">Não pode ser zero.</span>
+                </div>
+                <div class="input-field error"> <img src="images/icon-person.svg" alt="" class="icon">
+                    <input type="number" id="people" placeholder="0">
+                </div>
+            </div>
+        </section>
+
+        <section class="results-side">
+            <div class="result-row">
+                <div class="text">
+                    <p class="title">Valor da Gorjeta</p>
+                    <p class="subtitle">/ person</p>
+                </div>
+                <div class="amount">$0.00</div>
+            </div>
+
+            <div class="result-row">
+                <div class="text">
+                    <p class="title">Total</p>
+                    <p class="subtitle">/ pessoa</p>
+                </div>
+                <div class="amount">R$0.00</div>
+            </div>
+
+            <button type="button" class="reset-btn">RESET</button>
+        </section>
+
+    </main>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,71 +1,179 @@
+/* Configurações Globais */
 :root {
-    --fonte-primaria: "Space Mono", sans-serif;
-    --fonte-tamanho: 18px;
-    --fonte-peso: 700px;
-    --verde: hsl(172, 67%, 45%);
-    --verde-neutro: hsl(183, 100%, 15%);
-    --cinza: hsl(184,14%,56%);
-    --cinza-200: hsl(185,41%,84%);
-    --cinza-50: hsl(189,47%,97%);
-    --branco: hsl(0, 100%, 100%);
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --error-color: #E17457;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace; /* Fonte padrão desse desafio */
 }
 
 body {
-    background-color: var(--cinza-200);
-    font-family: var(--fonte-primaria);
-    font-size: var(--fonte-tamanho);
-    color: var(--verde-neutro);
-    font-weight: var(--fonte-peso);
-    height: 100vh;
-}
-
-header {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10% 50%;
-}
-
-.container-teste{
+    background-color: var(--light-grayish-cyan);
     display: flex;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-
-}
-.container-conta{
-  display: flex;
-  justify-content: center; /* Alinha horizontalmente */
-  align-items: center;     /* Alinha verticalmente */
-  width: 800px;
-  height: 350px;
-  border-radius:  20px;
-  padding: 2rem;
-  background-color: var(--branco);
-}
-.container-conta h1 {
-    color: var(--cinza);
-    font-family: var(--fonte-primaria);
-}
-input {
-background-color: var(--cinza-50);
-border: 2px solid red; 
-border-radius: 4px;
-background-image: url(images/icon-dollar.svg);
-background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-button {
-    background-color: var(--verde-neutro);
-    color: var(--branco);
-    border-radius: 30px;
+header { margin-bottom: 40px; }
+
+/* O Card Principal */
+.main-container {
+    background-color: var(--white);
+    width: 920px;
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+}
+
+/* Coluna da Esquerda (Inputs) */
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+label {
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    background-color: var(--very-light-grayish-cyan);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.input-field:focus-within {
+    border-color: var(--strong-cyan);
+}
+
+.input-field.error {
+    border-color: var(--error-color);
+}
+
+.input-field input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    outline: none;
+}
+
+/* Grid de Gorjetas */
+.tip-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 15px;
+    width: 100%;
 }
-button:hover {
-    background-color: var(--verde);
-    color: var(--verde-neutro);
+
+.tip-btn {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.btn-custom {
-    background-color: var(--cinza-50);
-    color: var(--cinza-200);
+
+.tip-btn:hover, .tip-btn.active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.custom-tip {
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    text-align: right;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+}
+
+/* Mensagem de Erro */
+.label-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Coluna da Direita (Resultados) */
+.results-side {
+    flex: 1;
+    background-color: var(--very-dark-cyan);
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.result-row .title {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.result-row .subtitle {
+    color: var(--dark-grayish-cyan);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.amount {
+    color: var(--strong-cyan);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.reset-btn {
+    margin-top: auto; /* Empurra o botão para o fundo */
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
 }
