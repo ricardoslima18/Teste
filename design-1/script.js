@@ -12,7 +12,13 @@ let billValue = 0.0;
 let tipValue = 0.1; // 10% padrão (conforme a imagem)
 let peopleValue = 1;
 
+billInput.oninput = function () {
+    if (this.value.length > 5) {
+        this.value = this.value.slice(0, 8); 
+    }
+};
 // Funções de Cálculo
+
 function calculate() {
     if (peopleValue >= 1) {
         // Cálculo da Gorjeta por Pessoa
@@ -78,8 +84,8 @@ resetBtn.addEventListener('click', () => {
     tipButtons[1].classList.add('active'); // Volta para o 10% padrão
     tipValue = 0.1;
     
-    document.querySelectorAll('.amount')[0].innerHTML = "$0.00";
-    document.querySelectorAll('.amount')[1].innerHTML = "$0.00";
+    document.querySelectorAll('.amount')[0].innerHTML = "R$0.00";
+    document.querySelectorAll('.amount')[1].innerHTML = "R$0.00";
     errorMsg.style.display = 'none';
     peopleInput.parentElement.classList.remove('error');
 });

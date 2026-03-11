@@ -139,7 +139,7 @@ label {
     border-radius: 15px;
     padding: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 .result-row {
@@ -179,11 +179,26 @@ label {
     text-transform: uppercase;
 }
 
+/* Para Chrome, Safari, Edge e Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
 /* Media Query para telas de até 800px (Tablets e Celulares) */
 @media (max-width: 800px) {
     body {
         justify-content: flex-start; /* Alinha o conteúdo ao topo */
         padding-top: 50px;
+        margin: 0 20px;
     }
 
     /* O container principal muda de 'row' para 'column' */
@@ -215,7 +230,7 @@ label {
     }
 }
 
-/* Ajuste extra para telas muito pequenas (iPhone SE, etc) */
+/* Ajuste extra para telas pequenas  */
 @media (max-width: 375px) {
     .amount {
         font-size: 28px;
@@ -224,13 +239,13 @@ label {
         gap: 5px;
         width: 10px;
     }
+    body {
+        margin-left: 20px;
+    }
     .tip-btn, .custom-tip {
-    width: 100% !important; /* Força a ocupar a largura da célula do grid */
-    box-sizing: border-box; /* Fundamental: impede que o padding aumente o botão */
-    margin: 0;              /* Garante que não haja margens extras empurrando os vizinhos */
-    padding: 10px 37px;      /* Padding igual para todos */
-}
-.custom-tip:placeholder-shown {
-    
+    width: 100% !important; 
+    box-sizing: border-box; 
+    margin: 0;             
+    padding: 20px 37px;     
 }
 }
