@@ -178,6 +178,10 @@ label {
     cursor: pointer;
     text-transform: uppercase;
 }
+.reset-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
 
 /* Para Chrome, Safari, Edge e Opera */
 input::-webkit-outer-spin-button,
