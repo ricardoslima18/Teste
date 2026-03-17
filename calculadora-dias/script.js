@@ -1,10 +1,12 @@
 const btn = document.querySelector('.submit-btn');
-
+const inputs = document.querySelectorAll('.input-group input');
 btn.addEventListener('click', () => {
+    let isValid = true;
     const dayInput = document.querySelector('.input-group:nth-child(1) input').value;
     const monthInput = document.querySelector('.input-group:nth-child(2) input').value;
     const yearInput = document.querySelector('.input-group:nth-child(3) input').value;
-
+    const errorMsg = document.querySelector('.error-msg');
+    
     const today = new Date();
     const birthDate = new Date(yearInput, monthInput - 1, dayInput);
 
@@ -22,12 +24,25 @@ btn.addEventListener('click', () => {
         months += 12;
         years--;
     }
+    
 
     const results = document.querySelectorAll('.result-section span');
     
     animateValue(results[0], years);
     animateValue(results[1], months);
     animateValue(results[2], days);
+});
+peopleInput.addEventListener('input', (e) => {
+    peopleValue = parseInt(e.target.value) || 0;
+
+    if (peopleValue <= 0) {
+        errorMsg.style.display = 'block';
+        peopleInput.parentElement.classList.add('error');
+    } else {
+        errorMsg.style.display = 'none';
+        peopleInput.parentElement.classList.remove('error');
+        calculate();
+    }
 });
 
 function animateValue(element, value) {
@@ -45,3 +60,4 @@ function animateValue(element, value) {
         }
     }, 10);
 }
+
