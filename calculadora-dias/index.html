@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="card">
+  <div class="input-section">
+    <div class="input-group">
+      <label>Dia</label>
+      <input type="number" placeholder="DD">
+    </div>
+    <div class="input-group">
+      <label>Mês</label>
+      <input type="number" placeholder="MM">
+    </div>
+    <div class="input-group">
+      <label>Anos</label>
+      <input type="number" placeholder="AAAA">
+    </div>
+  </div>
+
+  <div class="divider">
+    <button class="submit-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+    </button>
+  </div>
+
+  <div class="result-section">
+    <h1><span></span> anos</h1>
+    <h1><span></span> meses</h1>
+    <h1><span></span> dias</h1>
+  </div>
+</div>
+<script src="script.js"></script>
+
+</body>

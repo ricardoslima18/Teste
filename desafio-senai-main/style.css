@@ -1,0 +1,147 @@
+:root {
+    --cor-principal: #0215e4;
+    --tamanho-fonte: 16px;
+    --tipo-fonte: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+body {
+    background-image: url(background-mg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    display: none;
+}
+
+.cadastro-cliente  {
+    background-image: url(rinha\ de\ galo.png);
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    display:grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 50%;
+    height: 1080px;
+    padding: 20px;
+    position: absolute;
+    top: 7%;
+    left: 15%;
+}
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    gap: 10px;
+}
+
+.inputs input {
+    border-radius: 10px;
+    font-weight: 700;
+    height: 21px;
+    width: 180px;
+    position: relative;
+    top: 120px;
+    left: 190px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--tamanho-fonte);
+}
+button {
+    border-radius: 10px;
+    color: blue;
+    background-color: rgb(14, 194, 68);
+    font-family: var(--tipo-fonte);
+    position: relative;
+    top: 120px;
+    left: 190px;
+    height: 21px;
+    width: 100px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: rgb(0, 250, 33);
+    cursor: pointer;
+    font-weight: 900;
+    transition: ease 0.3s;
+}
+input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+
+input.error {
+  border-color: red; 
+  background-color: #fdd; 
+}
+
+
+.mensagem-erro {
+  color: red;
+  font-size: 12px;
+  display: none; 
+}
+
+input.error + .mensagem-erro {
+  display: block;
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        background-image: url(galinhas\ 375px.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center; 
+        align-items: center;     
+        margin: 0;
+    }
+
+    .cadastro-cliente {
+        all: unset; 
+        display: flex;
+        flex-direction: column;
+        width: 90%; 
+        max-width: 320px;
+        padding: 20px;
+        background: #833AB4;
+background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 0.5) 50%, rgba(252, 176, 69, 1) 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+.inputs input, button {
+    position: static; 
+    width: 100% !important;
+margin: 5px 0;
+}
+h1 {
+position: absolute;
+top: 10px;
+font-family: 'Arial Black', sans-serif;
+font-size: 5vh;
+font-weight: bold;
+text-transform: uppercase;
+background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+display: inline-block;
+transform: scaleY(1.5) skewX(-10deg);
+filter: drop-shadow(2px 2px 0px #555);
+}
+button {
+    background-color: white;
+    font-weight: 700;
+}
+}
